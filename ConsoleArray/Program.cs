@@ -10,20 +10,21 @@ namespace MyApp
 {
     public class Program
     {
-       
 
-            public static void Main(string[] args)
-            {
-              
-                var n= Linq.Callmethod();
 
-                Console.ReadLine();
-                //var v =  ImageResize.ResizeImage();
-                //_ = WWArray.minArray();
+        public static void Main(string[] args)
+        {
 
-            }
+            var v = InterviewQuestion.top2mostrepetingcaharactor();
+            // var n= Linq.Callmethod();
 
-        
-        
+            Console.ReadLine();
+            //var v =  ImageResize.ResizeImage();
+            //_ = WWArray.minArray();
+
+        }
+
+
+
     }
 }

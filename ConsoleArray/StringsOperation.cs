@@ -29,6 +29,17 @@ namespace ConsoleArray
             Console.ReadLine();
             return "";
         }
+         public static string String_To_CharArray()
+        {
+            string str = "Hello, World!";      
+            char[] charArray = str.ToCharArray();
+            foreach (char c in charArray)
+            {
+                Console.WriteLine(c);
+            }
+            Console.ReadLine();
+            return "";
+        }
         public static string String_From_CharArray()
         {
             char[] chars = { 'H', 'e', 'l', 'l', 'o' };
