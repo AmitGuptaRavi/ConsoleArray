@@ -1,0 +1,156 @@
+﻿{
+  "Scenario": "Recommendation",
+  "DataSource": {
+    "Type": "SQL",
+    "Version": 1,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Id",
+        "ColumnPurpose": "User",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Comp_Code",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "FIN_YR",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ClassId",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SectionId",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "StudentId",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Review",
+        "ColumnPurpose": "Item",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ReviewType",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Rating",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "RatingType",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Entry_By",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Review_Action",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "IsActionTaken",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "EntryDate",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "IsAtive",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ],
+    "ConnectionString": "Data Source=69.57.172.16;Initial Catalog=AngeeraSMS;User ID=angeera4_SMS;Trust Server Certificate=True",
+    "CommandString": "SELECT CAST([Id] as REAL), CAST([Review] as NVARCHAR(MAX)), CAST([Rating] as REAL) FROM [dbo].[StudentReviews]",
+    "DatabaseName": "AngeeraSMS",
+    "SelectedTableDbo": "dbo",
+    "TableName": "StudentReviews"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "RecommendationTrainingOption",
+    "TrainingTime": 60,
+    "OptimizeMetric": "RSquared",
+    "LabelColumn": "Rating",
+    "UserIdColumn": "Id",
+    "ItemIdColumn": "Review",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
